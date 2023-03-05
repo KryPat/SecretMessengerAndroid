@@ -10,7 +10,7 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="textview">Secret Messenger</string>
-    <string name="editText">Secret messages \nare so cool, \naren't they?</string>
+    <string name="editText">Secret messages \nare so cool, \naren\'t they?</string>
     <string name="textView2">Key:</string>
     <string name="txtKey">0</string>
 </resources>

@@ -88,6 +88,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        sb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                int key = sb.getProgress() - 13;
+                String message = txtIn.getText().toString();
+                String output = encode(message, key);
+                txtOut.setText(output);
+                txtKey.setText("" + key);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
         /*
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();

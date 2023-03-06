@@ -24,7 +24,7 @@
         android:autofillHints=""
         android:ems="10"
         android:gravity="start|top"
-        android:inputType="textMultiLine"
+        android:inputType="textMultiLine|textNoSuggestions"
         android:lines="4"
         android:text="@string/editText"
         tools:ignore="LabelFor,VisualLintTextFieldSize" />
@@ -33,7 +33,9 @@
         android:id="@+id/seekBar"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp" />
+        android:layout_marginTop="150dp"
+        android:max="26"
+        android:progress="26" />
 
     <TextView
         android:id="@+id/textView2"
@@ -81,7 +83,7 @@
         android:autofillHints=""
         android:ems="10"
         android:gravity="start|top"
-        android:inputType="textMultiLine"
+        android:inputType="textMultiLine|textNoSuggestions"
         android:lines="4"
         android:text="@string/editText"
         tools:ignore="LabelFor,VisualLintTextFieldSize" />

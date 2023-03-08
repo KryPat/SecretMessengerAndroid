@@ -1,25 +1,21 @@
 package com.learn.secretmessages;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.View;
-
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
-import com.learn.secretmessages.databinding.ActivityMainBinding;
-
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.learn.secretmessages.databinding.ActivityMainBinding;
+
+import java.text.DateFormat;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
     EditText txtIn;
@@ -27,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     EditText txtKey;
     SeekBar sb;
     Button btn;
-    private AppBarConfiguration appBarConfiguration;
+    //private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
 
     public String encode( String message, int keyVal ){
@@ -72,20 +68,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbar);
-        txtIn = (EditText)findViewById(R.id.txtIn);
-        txtOut = (EditText)findViewById(R.id.txtOut);
-        txtKey = (EditText)findViewById(R.id.txtKey);
-        sb = (SeekBar)findViewById(R.id.seekBar);
-        btn = (Button)findViewById(R.id.button);
+        txtIn = findViewById(R.id.txtIn);
+        txtOut = findViewById(R.id.txtOut);
+        txtKey = findViewById(R.id.txtKey);
+        sb = findViewById(R.id.seekBar);
+        btn = findViewById(R.id.button);
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int key = Integer.parseInt(txtKey.getText().toString());
-                String message = txtIn.getText().toString();
-                String output = encode(message, key);
-                txtOut.setText(output);
-            }
+        btn.setOnClickListener(view -> {
+            int key = Integer.parseInt(txtKey.getText().toString());
+            String message = txtIn.getText().toString();
+            String output = encode(message, key);
+            txtOut.setText(output);
         });
 
         sb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -114,15 +107,22 @@ public class MainActivity extends AppCompatActivity {
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
-        binding.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
          */
+        binding.fab.setOnClickListener(view -> {
+            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+            shareIntent.setType("text/plain");
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Secret Message" +
+                    DateFormat.getDateInstance().format(new Date()));
+            shareIntent.putExtra(Intent.EXTRA_TEXT, txtOut.getText().toString());
+            try {
+                startActivity(Intent.createChooser(shareIntent, "Share message..."));
+                finish();
+            }
+            catch (android.content.ActivityNotFoundException ex) {
+                Toast.makeText(MainActivity.this, "Error: Couldn't share.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

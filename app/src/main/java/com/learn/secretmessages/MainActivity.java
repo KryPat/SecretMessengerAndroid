@@ -72,6 +72,11 @@ public class MainActivity extends AppCompatActivity {
         txtKey = findViewById(R.id.txtKey);
         sb = findViewById(R.id.seekBar);
         btn = findViewById(R.id.button);
+        Intent receivedIntent = getIntent();
+        String receivedText = receivedIntent.getStringExtra(Intent.EXTRA_TEXT);
+        if (receivedText != null)
+            txtIn.setText(receivedText);
+
 
         btn.setOnClickListener(view -> {
             int key = Integer.parseInt(txtKey.getText().toString());

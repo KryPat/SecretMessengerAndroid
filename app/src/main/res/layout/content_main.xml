@@ -70,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="false"
         android:layout_alignParentBottom="false"
-        android:layout_marginVertical="134dp"
+        android:layout_marginVertical="150dp"
         android:text="Action!"
         android:layout_alignParentEnd="false"
         android:layout_marginLeft="153dp" />
@@ -79,7 +79,7 @@
         android:id="@+id/txtOut"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="220dp"
         android:autofillHints=""
         android:ems="10"
         android:gravity="start|top"
@@ -93,7 +93,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/move_up"
-        android:layout_marginVertical="134dp"
+        android:layout_marginVertical="150dp"
         android:layout_marginLeft="260dp"
         android:layout_marginTop="153dp" />
 </RelativeLayout>

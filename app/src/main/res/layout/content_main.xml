@@ -41,19 +41,19 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
+        android:layout_marginStart="50dp"
         android:layout_marginLeft="150dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="170dp"
         android:text="@string/textView2"
-        android:textAppearance="@style/TextAppearance.Material3.LabelMedium" />
+        android:textAppearance="@style/TextAppearance.Material3.LabelLarge" />
 
     <EditText
         android:id="@+id/txtKey"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="175dp"
-        android:layout_marginLeft="175dp"
-        android:layout_marginTop="136dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginLeft="162dp"
+        android:layout_marginTop="166dp"
         android:width="48dp"
         android:ems="10"
         android:gravity="center"
@@ -70,16 +70,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="false"
         android:layout_alignParentBottom="false"
-        android:layout_marginVertical="130dp"
+        android:layout_marginVertical="134dp"
         android:text="Action!"
         android:layout_alignParentEnd="false"
-        android:layout_marginLeft="240dp" />
+        android:layout_marginLeft="223dp" />
 
     <EditText
         android:id="@+id/txtOut"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="280dp"
         android:autofillHints=""
         android:ems="10"
         android:gravity="start|top"
@@ -87,4 +87,12 @@
         android:lines="4"
         android:text="@string/editText"
         tools:ignore="LabelFor,VisualLintTextFieldSize" />
+
+    <Button
+        android:id="@+id/MoveUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/move_up"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="134dp" />
 </RelativeLayout>

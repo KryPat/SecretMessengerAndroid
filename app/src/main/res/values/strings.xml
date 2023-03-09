@@ -13,4 +13,5 @@
     <string name="editText">Secret messages \nare so cool, \naren\'t they?</string>
     <string name="textView2">Key:</string>
     <string name="txtKey">0</string>
+    <string name="move_up">Move up ⬆</string>
 </resources>

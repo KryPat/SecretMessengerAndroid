@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     EditText txtKey;
     SeekBar sb;
     Button btn;
+    Button btnMove;
     //private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
 
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         txtKey = findViewById(R.id.txtKey);
         sb = findViewById(R.id.seekBar);
         btn = findViewById(R.id.button);
+        btnMove = findViewById(R.id.moveUp);
         Intent receivedIntent = getIntent();
         String receivedText = receivedIntent.getStringExtra(Intent.EXTRA_TEXT);
         if (receivedText != null)
@@ -83,6 +85,10 @@ public class MainActivity extends AppCompatActivity {
             String message = txtIn.getText().toString();
             String output = encode(message, key);
             txtOut.setText(output);
+        });
+
+        btnMove.setOnClickListener(view -> {
+
         });
 
         sb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {

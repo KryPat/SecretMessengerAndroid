@@ -89,7 +89,7 @@
         tools:ignore="LabelFor,VisualLintTextFieldSize" />
 
     <Button
-        android:id="@+id/MoveUp"
+        android:id="@+id/moveUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/move_up"

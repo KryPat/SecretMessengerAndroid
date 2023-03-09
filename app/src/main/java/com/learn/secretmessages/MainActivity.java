@@ -88,7 +88,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnMove.setOnClickListener(view -> {
-
+            txtIn.setText(txtOut.getText().toString());
+            sb.setProgress(26-(sb.getProgress()));
+            txtKey.setText("" + (sb.getProgress() - 13));
         });
 
         sb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {

@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
         btn.setOnClickListener(view -> {
             int key = Integer.parseInt(txtKey.getText().toString());
+            sb.setProgress(key + 13);
             String message = txtIn.getText().toString();
             String output = encode(message, key);
             txtOut.setText(output);
